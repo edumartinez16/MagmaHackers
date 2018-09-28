@@ -1,5 +1,3 @@
-# require_relative './game.rb'
-
 # Class for creating cells and control their lifes
 class Cell
   def initialize(game, game_size)
@@ -8,23 +6,22 @@ class Cell
     @board_size = game_size
   end
 
-  def set_livings_cell
-    # (0..@number_cells).each do
-    #   @board[rand(@board_size - 1)][rand(@board_size - 1)] = 1
-    # end
-    @board[2][2] = 1
-    @board[2][3] = 1
-    @board[2][4] = 1
-    @board[1][3] = 1
-    @board[1][4] = 1
-    @board[1][5] = 1
+  # Fills the matrix with 1 in random positions
+  def livings_cell
+    (0..@number_cells).each do
+      @board[rand(@board_size - 1)][rand(@board_size - 1)] = 1
+    end
+    # @board[1][1] = 1
+    # @board[1][2] = 1
+    # @board[2][1] = 1
+    # @board[2][3] = 1
+    # @board[3][2] = 1
   end
 
+  # This methods contains the basic rules of the game
   def find_cells
     for col in 0..@board_size - 1
       for row in 0..@board_size - 1
-    # (0..@board_size - 1).each do |col|
-    #   (0..@board_size - 1).each do |row|
         @current = @board[col][row]
         @neighbors = check_neighbors(@board, col, row)
         if @current.zero? && @neighbors == 3
@@ -38,6 +35,7 @@ class Cell
     end
   end
 
+  # This method check the number of neighbors of every cell
   def check_neighbors(matrix, col, row)
     sum = 0
     for x in -1..1
