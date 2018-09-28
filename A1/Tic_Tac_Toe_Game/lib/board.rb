@@ -47,11 +47,11 @@ class Board
 
   # Function to check the possible combinations of winning
   def check_win(symbol)
-    if checkHorizontalComb(symbol) == true
+    if check_horizontal_comb(symbol) == true
       true
-    elsif checkVerticalComb(symbol) == true
+    elsif check_vertical_comb(symbol) == true
       true
-    elsif checkDiagonalComb(symbol) == true
+    elsif check_diagonal_comb(symbol) == true
       true
     else
       false

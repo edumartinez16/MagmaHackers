@@ -32,14 +32,14 @@ class Player
 
   # Function to draw the symbol of the player in the position that the player choose
   def choose_spot
-    while 
+    while true
       # Display message to the current player
       puts "Hola #{@name}, ingresa el número correspondiente al lugar donde quieres poner tu #{@symbol}"
       @number = gets.chomp.to_i
       # Compare if the @number is between 1 or 9
       if @number >= 1 && @number <= 9
         # If the symbol is drawn correctly the loop is broken
-        if @board.drawSymbol(@number.to_s, @symbol)
+        if @board.draw_symbol(@number.to_s, @symbol)
           break
         end
       else

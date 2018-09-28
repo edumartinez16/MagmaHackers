@@ -6,10 +6,10 @@ class Game
   def initialize
     # Creating and filling the board
     @board = Board.new
-    @board.fillBoard()
+    @board.fill_board()
     # Creating players for the game
-    createPlayer1()
-    createPlayer2()
+    create_player1()
+    create_player2()
     # Set the first player
     @active_player = @player1
   end
@@ -39,12 +39,12 @@ class Game
       # Draw the board on the terminal
       @board.print_board
       # Ask the player to choose where to draw the symbol
-      @active_player.choose_spot()
+      @active_player.choose_spot
       # Check if the current player won
       if @board.check_win(@active_player.player_symbol)
         @board.print_board
         puts 'Has ganado'
-        @active_player.setPlayerVictory()
+        @active_player.victory
         # Ask if the player wants to play again
         play_again
         # If not, the loop is broken
@@ -74,7 +74,7 @@ class Game
   # Method to create the second player creating an instance of the class Player with the variable @player1
   def create_player2
     name = name
-    symbol = 'Os'
+    symbol = 'O'
     # To create a new player the name of the player, the symbol which is going to use and the board is needed
     @player2 = Player.new(name, symbol, @board)
     puts "Simbolo: #{@player2.player_symbol}"
@@ -110,4 +110,4 @@ class Game
 end
 
 tic = Game.new
-tic.startGame
+tic.start_game
