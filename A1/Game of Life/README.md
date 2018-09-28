@@ -9,4 +9,4 @@ Currently there are no tests yet.
 ## Built With
 Ruby 2.3.3
 ## Authors
-The owner of this repository ;)
+The owner of this repository
