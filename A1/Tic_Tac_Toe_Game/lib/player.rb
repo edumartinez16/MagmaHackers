@@ -13,15 +13,11 @@ class Player
     @board = board
   end
 
-  def board(board)
-    @board = board
-  end
-
   # Fuction to obtain the player's symbol
   def player_symbol
     @symbol
   end
- 
+
   def player_victory
     @winner
   end
