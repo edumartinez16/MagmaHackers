@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = "Game of Life Gem"
+  s.name = "Game_of_Life_Gem"
   s.version = '0.0.1'
   s.date = '2018-09-28'
   s.authors = ["Eduardo Martínez"]
